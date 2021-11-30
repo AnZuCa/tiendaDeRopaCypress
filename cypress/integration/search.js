@@ -11,4 +11,11 @@ describe('Search elements ',function(){
         cy.search('dqwertys');
         cy.containAlert('No results were found for your search');
     })
+    it('Search for elements with special code',()=>{
+        cy.readFile('cypress/support/text/search.txt').then((text)=>{
+            cy.search(text);
+
+        })
+        cy.containAlert('No results were found for your search');
+    })
 })
